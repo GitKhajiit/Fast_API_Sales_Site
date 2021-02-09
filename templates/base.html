@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="header__logo_img">
+            <img src="{{ url_for('static', path='img/money_transfer.svg') }}" alt="logo">
+        </div>
+
+        <div class="header__site_name">
+            Mr Cash
+        </div>
+
+        <div class="header__button cl_main">
+            <a href="{{ url_for('index')}}">На главную</a>
+        </div>
+
+        <div class="header__button cl_about">
+            <a href="{{ url_for('about')}}">О нас</a>
+        </div>
+
+        <div class="header__button cl_contacts">
+            <a href="{{ url_for('contacts')}}">Обратная связь</a>
+        </div>
+
+        <div class="header__button cl_payment">
+            <a href=" https://t.me/@WeathermasterLollyBot">
+              Telegram группа для ознакомления
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main__text">
+            <div class="wrapper">
+                <div class="wrapper__content">
+                    {% block main__text_field_main %}
+                    {% endblock %}
+
+                    {% block main__text_field_about %}
+                    {% endblock %}
+
+                    {% block main__text_field_contacs %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <div class="links">
+
+              <a class='link__gmail' type="button" name="button">
+                <img src="{{ url_for('static', path='img/gmail.svg') }}" alt="gmail_link">
+                <div class="link__gmail__wrapper">
+                  <p class=''>Почта</p>
+                </div>
+              </a>
+
+              <a class='link__telegram' type="button" name="button">
+                <img src="{{ url_for('static', path='img/telegram.svg') }}" alt="telegram_link">
+                <div class="link__telegram__wrapper">
+                  <p class=''>Телеграм</p>
+                </div>
+              </a>
+
+            </div>
+
+        </div>
+
+        <div class="main__img">
+            <img src="{{ url_for('static', path='img/fleks.png') }}" alt="book">
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="{{ url_for('static', path='js/common.js') }}"></script>
+</body>
+</html>
